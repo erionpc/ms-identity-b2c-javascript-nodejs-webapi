@@ -58,8 +58,7 @@ app.get('/hello',
     passport.authenticate('oauth-bearer', {session: false}),
     (req, res) => {
         console.log('Validated claims: ', req.authInfo);
-    
-          
+              
         // Service relies on the name claim.  
         res.status(200).json({'name': req.authInfo['name']});
     }
